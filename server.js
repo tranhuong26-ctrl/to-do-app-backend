@@ -6,13 +6,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-let tasks = [
-    {
-        id: 1,
-        text: "Học JavaScript",
-        completed: false
-    }
-];
+let tasks = [];
 
 // GET TASKS
 app.get("/tasks", (req, res) => {
