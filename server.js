@@ -1,9 +1,11 @@
 const express = require("express");
 const cors = require("cors");
-
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    origin:"https://to-do-app-649f0.web.app",
+    methods:["GET","POST","DELETE","PUT"]
+}));
 app.use(express.json());
 
 let tasks = [];
