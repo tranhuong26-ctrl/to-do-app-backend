@@ -32,6 +32,19 @@ app.post("/tasks", (req, res) => {
 
 });
 
+app.put("/tasks/:id", (req, res) => {
+
+    const id = parseInt(req.params.id);
+
+    const task = tasks.find(t => t.id === id);
+
+    if(task){
+        task.completed = !task.completed;
+    }
+
+    res.json(task);
+});
+
 // DELETE TASK
 app.delete("/tasks/:id", (req, res) => {
 
